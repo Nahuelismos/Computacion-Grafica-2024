@@ -1,4 +1,0 @@
-repository "ActividadesCP@nahuelismos_unity@cloud"
-  path "/"
-    br "/main"
-    co "/main"

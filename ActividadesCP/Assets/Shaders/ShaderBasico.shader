@@ -1,0 +1,32 @@
+Shader "ShaderBasico"{
+	SubShader{
+		Pass{
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragmen fragmen
+			
+			struct appdata{
+				float4 vertex: POSITION;
+				fixed4 color: COLOR;
+			};
+			
+			struct v2f {
+				float4 vertex: SV_POSITION;
+				fixed4 color: COLOR;
+			};
+			
+			v2f vert(appdata v){
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.color = v.Color;
+				return o;
+			}
+			
+			fixed4 frag(v2f i) : SV_Target{
+				//return half4(1.0f,0,0f,0.0f,1.0f);
+				return (i.color);
+			}
+			ENDCG
+		}
+	}
+}

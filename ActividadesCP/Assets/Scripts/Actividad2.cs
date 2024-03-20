@@ -31,7 +31,7 @@ public class Actividad2 : MonoBehaviour
      
         vertices = new Vector3[]{
             new Vector3(0,0,0),     //0
-            new Vector3(0,0,2),     //1
+            new Vector3(0,0,3.5f),     //1
             new Vector3(1,0,0),     //2
             new Vector3(1,0,3.5f),  //3
             new Vector3(2,0,3.5f),  //4

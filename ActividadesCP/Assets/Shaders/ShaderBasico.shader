@@ -3,7 +3,7 @@ Shader "ShaderBasico"{
 		Pass{
 			CGPROGRAM
 			#pragma vertex vert
-			#pragma fragmen fragmen
+			#pragma fragment frag
 			
 			struct appdata{
 				float4 vertex: POSITION;
@@ -18,7 +18,7 @@ Shader "ShaderBasico"{
 			v2f vert(appdata v){
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.color = v.Color;
+				o.color = v.color;
 				return o;
 			}
 			

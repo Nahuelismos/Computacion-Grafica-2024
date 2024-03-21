@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actividad3: MonoBehaviour
+public class Actividad3_4: MonoBehaviour
 {
     private Vector3[] vertices;
     private int[] triangles;
@@ -69,54 +69,49 @@ public class Actividad3: MonoBehaviour
             Debug.Log(i+": " + vertices[i]);
         }
         triangles = new int[]{
-            0,8,20, //t1
-            18,11,21, //t2
-            1,9,22, //t3
-            19,12,23, //t4
-            2,5,24, //t5
-            15,13,25, //t6
-            3,6,26, //t7
-            6,4,27, //t8
-            14,17,28, //t9
-            7,10,29 //t10
+            0,8,20, //t1 -color3
+            18,11,21, //t2 -color4  
+            1,9,22, //t3 -color5 
+            19,12,23, //t4 -color4 
+            2,5,24, //t5 -color5 
+            15,13,25, //t6 -color3 
+            3,6,26, //t7 -color2 
+            16,14,27, //t8 -color3
+            4,7,28, //t9 -color1 
+            17,10,29 //t10 -color2
         };
 	
 	colores = new Color[]{
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,1),
-
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,1),
-
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,0),
-		new Color(0,0,1)
+		new Color(84/255f,153/255f,199/255f), //0 -c3
+		new Color(21/255f,67/255f,96/255f), //1 -c5
+		new Color(21/255f,67/255f,96/255f), //2 -c5
+		new Color(169/255f,204/255f,227/255f), //3 -c2
+		new Color(212/255f,230/255f,241/255f), //4 -c1
+		new Color(21/255f,67/255f,96/255f), //5 -c5
+		new Color(169/255f,204/255f,227/255f), //6 -c2
+		new Color(212/255f,230/255f,241/255f), //7 -c1
+		new Color(84/255f,153/255f,199/255f), //8 -c3
+		new Color(21/255f,67/255f,96/255f), //9 -c5
+		new Color(169/255f,204/255f,227/255f), //10 -c2
+		new Color(31/255f,97/255f,141/255f), //11 -c4
+		new Color(31/255f,97/255f,141/255f), //12 -c4
+		new Color(84/255f,153/255f,199/255f), //13 -c3
+		new Color(84/255f,153/255f,199/255f), //14 -c3
+		new Color(84/255f,153/255f,199/255f), //15 -c3
+		new Color(84/255f,153/255f,199/255f), //16 -c3
+		new Color(169/255f,204/255f,227/255f), //17 -c2
+		new Color(31/255f,97/255f,141/255f), //18 -c4
+		new Color(31/255f,97/255f,141/255f), //19 -c4
+		new Color(84/255f,153/255f,199/255f), //20 -c3
+		new Color(31/255f,97/255f,141/255f), //21 -c4 
+		new Color(21/255f,67/255f,96/255f), //22 -c5
+		new Color(31/255f,97/255f,141/255f), //23 -c4
+		new Color(21/255f,67/255f,96/255f), //24 -c5
+		new Color(84/255f,153/255f,199/255f), //25 -c3
+		new Color(169/255f,204/255f,227/255f), //26 -c2
+		new Color(84/255f,153/255f,199/255f), //27 -c3
+		new Color(212/255f,230/255f,241/255f), //28 -c1
+		new Color(169/255f,204/255f,227/255f), //29 -c2
 	};
     }
 

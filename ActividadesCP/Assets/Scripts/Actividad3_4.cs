@@ -119,7 +119,7 @@ public class Actividad3_4: MonoBehaviour
     {
         objetoEstrella.GetComponent<MeshFilter>().mesh.vertices = vertices;
         objetoEstrella.GetComponent<MeshFilter>().mesh.triangles = triangles;
-	objetoEstrella.GetComponent<MeshFilter>().mesh.colors = colores;
+	    objetoEstrella.GetComponent<MeshFilter>().mesh.colors = colores;
     }
 
     private void CreateCamera()

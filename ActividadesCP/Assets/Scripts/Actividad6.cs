@@ -20,6 +20,7 @@ public class Actividad6 : MonoBehaviour {
         CreateCamera();
 		//UpdateMesh();
 		valor_act = 1.0f;
+		ang_ext = -90.0f;
     }
 
     // Update is called once per frame

@@ -2,76 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actividad6 : MonoBehaviour { 
-	private Vector3[] vertices;
-    private int[] triangles;
-	[SerializeField] private float valor_act, raiz, ang_ext;
-    [SerializeField] private float mouse, mousePress, rotacion, mouseMov;
-    private GameObject miCamara;//, cam_trian;
-    //[SerializeField] private Vector3 posicionCamara, rotacionCamara; 
-    
-	void Start(){ 
-		//cam_trian = new GameObject("Cam_triang");
-        //cam_trian.AddComponent<MeshFilter>(); 
-        //cam_trian.GetComponent<MeshFilter>().mesh = new Mesh();
-        //cam_trian.AddComponent<MeshRenderer>();
-		//CreateCam_Triang();
-		raiz = 7.0f;
+public class Actividad6 : MonoBehaviour
+{
+    // Start is called before the first frame update
+    [SerializeField] private  float mouse, mousePress, mouseMov;
+    [SerializeField] private float rotacion;
+    [SerializeField] private GameObject miCamara;
+    [SerializeField] private Vector3 posicionCamara, rotacionCamara; 
+    void Start(){
+        posicionCamara = new Vector3(0,0,-7);
+        rotacionCamara = new Vector3(0,0,0);
         CreateCamera();
-		//UpdateMesh();
-		valor_act = 1.0f;
-		ang_ext = -90.0f;
     }
 
     // Update is called once per frame
-    void Update() {
-		mouse = Input.mousePosition.x;
-		if (Input.GetKeyDown(KeyCode.Mouse0)){
+    /*void Update()
+    {
+        mouse = Input.mousePosition; //solo para ver
+        if (Input.GetKeyDown(KeyCode.Mouse0)){
             mousePress = mouse;
-		}
-		if(Input.GetKey(KeyCode.Mouse0)){
-			if(mousePress != 0.0f)
-                rotacion = valor_act + 20.0f*(mousePress-mouse)/mousePress;
-			else {
-				rotacion = valor_act;
-			}
-			miCamara.transform.rotation = Quaternion.Euler(0.0f,-rotacion+ang_ext,0.0f);
-			miCamara.transform.position = new Vector3(raiz*Mathf.Cos(2.0f*Mathf.PI*rotacion/360.0f),0.0f,raiz*Mathf.Sin(2.0f*Mathf.PI*rotacion/360.0f));
-		}
-		if(Input.GetKeyUp(KeyCode.Mouse0)){
-			valor_act=rotacion;
-			miCamara.transform.rotation = Quaternion.Euler(0.0f,-valor_act+ang_ext,0.0f);
-			miCamara.transform.position = new Vector3(raiz*Mathf.Cos(2.0f*Mathf.PI*valor_act/360.0f),0.0f,raiz*Mathf.Sin(2.0f*Mathf.PI*valor_act/360.0f));
-		}
-		
-    }
-	
-	/*private void CreateCam_Triang(){
-		cam_trian.transform.position = new Vector3(7,0,0);
-		vertices = new Vector3[]{
-            new Vector3(0,0,0),
-			new Vector3(1,0,0.5f),
-			new Vector3(1,0,-0.5f)
-		 };
-		 
-		triangles = new int[]{
-            0,1,2
-		};
-	}
-	
-	private void UpdateMesh() {
-        cam_trian.GetComponent<MeshFilter>().mesh.vertices = vertices;
-        cam_trian.GetComponent<MeshFilter>().mesh.triangles = triangles;
+        }
+        if(Input.GetKey(KeyCode.Mouse0)){
+            mouseMov = mousePress - mouse;
+            //miCamara.transform.Rotate(0.0f, mouseMov.x/100, 0.0f,Space.World);
+
+        }
+        if(Input.GetKeyUp(KeyCode.Mouse0)){
+            mouseMov = new Vector3(0, 0, 0);
+        }
+        miCamara.transform.LookAt(Vector3.zero);
+        rotacionCamara = new Vector3 (miCamara.transform.rotation.x, miCamara.transform.rotation.y, miCamara.transform.rotation.z);
     }*/
-	
-    private void CreateCamera() {
+
+    private void Update() {
+        mouse = Input.mousePosition.x;
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            mousePress = Input.mousePosition.x;
+        }
+        if (Input.GetKey(KeyCode.Mouse0)) {
+            mouseMov = Mathf.Clamp((mousePress - mouse), -100f,100f);
+       
+        }
+        miCamara.transform.rotation = Quaternion.Euler(0, mouseMov, 0);
+
+    }
+    private void CreateCamera()
+    {
         miCamara = new GameObject("Camara");
         miCamara.AddComponent<Camera>();
 
         //----Posicion en el centro----
-        miCamara.transform.position = new Vector3(raiz,0,0);
+        miCamara.transform.position = posicionCamara;
 
-        miCamara.transform.rotation = Quaternion.Euler(0,-90,0);
+        miCamara.transform.rotation = Quaternion.Euler(rotacionCamara.x,rotacionCamara.y,rotacionCamara.z);
         miCamara.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
         miCamara.GetComponent<Camera>().backgroundColor = Color.white;
     }

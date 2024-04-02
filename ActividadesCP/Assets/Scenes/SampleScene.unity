@@ -119,6 +119,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &370558248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370558250}
+  - component: {fileID: 370558249}
+  m_Layer: 0
+  m_Name: Clase2_5(cuadrado)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &370558249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370558248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f591e3b6f70f6d4ebf0a98ea1ded34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPosition: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
+  newScale: {x: 0, y: 0, z: 0}
+--- !u!4 &370558250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370558248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9153695, y: -0.62152386, z: -4.944063}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554628379
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &582803237
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -285,12 +332,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e2b80d9110ede4986f8e4fa4c2a628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse: {x: 0, y: 0}
-  mousePress: {x: 0, y: 0}
-  mouseMov: {x: 0, y: 0}
+  valor_act: 0
+  raiz: 0
+  ang_ext: 0
+  mouse: 0
+  mousePress: 0
   rotacion: 0
-  posicionCamara: {x: 0, y: 0, z: 0}
-  rotacionCamara: {x: 0, y: 0, z: 0}
+  mouseMov: 0
 --- !u!1 &600882327
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1153159219
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -545,3 +593,4 @@ SceneRoots:
   - {fileID: 600882329}
   - {fileID: 582803240}
   - {fileID: 1153159222}
+  - {fileID: 370558250}

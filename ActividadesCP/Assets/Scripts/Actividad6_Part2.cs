@@ -90,9 +90,9 @@ public class Activdad6_Part2 : MonoBehaviour
         miCamara.AddComponent<Camera>();
 
         //----Posicion en el centro----
-        miCamara.transform.position = new Vector3(-2,2,0);
+        miCamara.transform.position = new Vector3(-3,3,-3);
 
-        miCamara.transform.rotation = Quaternion.Euler(45,90,0);
+        miCamara.transform.rotation = Quaternion.Euler(30,45,0);
         miCamara.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
         miCamara.GetComponent<Camera>().backgroundColor = Color.white;
 		miCamara.transform.SetParent(nave.transform);

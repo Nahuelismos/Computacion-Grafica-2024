@@ -5,7 +5,7 @@ using UnityEngine;
 public class Actividad6 : MonoBehaviour { 
 	private Vector3[] vertices;
     private int[] triangles;
-	[SerializeField] private float valor_act, raiz, ang_ext;
+	[SerializeField] private float valor_act, raiz, ang_ext, ang_x, pos_y;
     [SerializeField] private float mouse, mousePress, rotacion, mouseMov;
     private GameObject miCamara;//, cam_trian;
     //[SerializeField] private Vector3 posicionCamara, rotacionCamara; 
@@ -17,6 +17,8 @@ public class Actividad6 : MonoBehaviour {
         //cam_trian.AddComponent<MeshRenderer>();
 		//CreateCam_Triang();
 		raiz = 7.0f;
+		pos_y =7.0f;
+		ang_x = 45;
         CreateCamera();
 		//UpdateMesh();
 		valor_act = 1.0f;
@@ -35,13 +37,13 @@ public class Actividad6 : MonoBehaviour {
 			else {
 				rotacion = valor_act;
 			}
-			miCamara.transform.rotation = Quaternion.Euler(0.0f,-rotacion+ang_ext,0.0f);
-			miCamara.transform.position = new Vector3(raiz*Mathf.Cos(2.0f*Mathf.PI*rotacion/360.0f),0.0f,raiz*Mathf.Sin(2.0f*Mathf.PI*rotacion/360.0f));
+			miCamara.transform.rotation = Quaternion.Euler(ang_x,-rotacion+ang_ext,0.0f);
+			miCamara.transform.position = new Vector3(raiz*Mathf.Cos(2.0f*Mathf.PI*rotacion/360.0f),pos_y,raiz*Mathf.Sin(2.0f*Mathf.PI*rotacion/360.0f));
 		}
 		if(Input.GetKeyUp(KeyCode.Mouse0)){
 			valor_act=rotacion;
-			miCamara.transform.rotation = Quaternion.Euler(0.0f,-valor_act+ang_ext,0.0f);
-			miCamara.transform.position = new Vector3(raiz*Mathf.Cos(2.0f*Mathf.PI*valor_act/360.0f),0.0f,raiz*Mathf.Sin(2.0f*Mathf.PI*valor_act/360.0f));
+			miCamara.transform.rotation = Quaternion.Euler(ang_x,-valor_act+ang_ext,0.0f);
+			miCamara.transform.position = new Vector3(raiz*Mathf.Cos(2.0f*Mathf.PI*valor_act/360.0f),pos_y,raiz*Mathf.Sin(2.0f*Mathf.PI*valor_act/360.0f));
 		}
 		
     }
@@ -69,9 +71,9 @@ public class Actividad6 : MonoBehaviour {
         miCamara.AddComponent<Camera>();
 
         //----Posicion en el centro----
-        miCamara.transform.position = new Vector3(raiz,0,0);
+        miCamara.transform.position = new Vector3(raiz,pos_y,0);
 
-        miCamara.transform.rotation = Quaternion.Euler(0,-90,0);
+        miCamara.transform.rotation = Quaternion.Euler(ang_x,-90,0);
         miCamara.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
         miCamara.GetComponent<Camera>().backgroundColor = Color.white;
     }

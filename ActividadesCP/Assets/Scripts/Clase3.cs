@@ -10,7 +10,7 @@ public class Clase3 : MonoBehaviour {
 	private Color[] colores;
     private  GameObject objeto;
 	void Start(){
-		string fileName = "Cubo";
+		string fileName = "bed1";
 		string path = "Assets/Objects/"+fileName+".obj";
 		StreamReader reader = new StreamReader(path);
 		
@@ -67,7 +67,7 @@ public class Clase3 : MonoBehaviour {
 				int[] triangulo_int = new int[9];
 				string triangulo_string = " ";
 				int pos_triangulo = 0;
-				for(int j = 2; j< lines[i].Length; j++){
+				for(int j = 2; j< lines[i].Length; j++){//j=2 si es el cubo, j = 3 si son los normales.
 					if((lines[i][j] != ' ')	 && (lines[i][j] != '/')){
 						triangulo_string+=lines[i][j];
 					}else{
@@ -79,8 +79,8 @@ public class Clase3 : MonoBehaviour {
 				}
 				triangulo_int[pos_triangulo] = int.Parse(triangulo_string);
 				//Debug.Log(cantF+"-"+pos_triangulo+": "+triangulo_string);
-				//Debug.Log(cantF+": <"+triangulo_int[0]+" - "+triangulo_int[3]+" - "+triangulo_int[6]+">");
-				lista_triangulo.Add(new Vector3(triangulo_int[0], triangulo_int[1],  triangulo_int[2]));
+				//Debug.Log(cantF+": <"+triangulo_int[0]+" - "+triangulo_int[3]+" - "+triangulo_int[6]+">"); //0,3,6 si es normal, 0,1,2 si es el cubo
+				lista_triangulo.Add(new Vector3(triangulo_int[0]-1, triangulo_int[3]-1,  triangulo_int[6]-1));
 				cantF++;
 			}
 		}

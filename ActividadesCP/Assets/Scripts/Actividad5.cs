@@ -106,6 +106,4 @@ public class Actividad5 : MonoBehaviour
         	objetoF[i].GetComponent<MeshRenderer>().material = newMaterial;
 		}
     }
-	
-	
 }

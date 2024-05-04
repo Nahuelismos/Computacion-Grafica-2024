@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material Difuso
-  m_Shader: {fileID: 4800000, guid: 4c498d27371df6347a23af81ff9f6599, type: 3}
+  m_Name: Material difuso direccional
+  m_Shader: {fileID: 4800000, guid: 6aaa949cdea77604899c8b15871f9453, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -80,7 +80,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LigthPosition_w: {r: 10, g: 5, b: 10, a: 1}
-    - _MaterialColor: {r: 0.24999997, g: 0.5, b: 0.5, a: 1}
+    - _LigthPosition_w: {r: -2.26, g: 7.37, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

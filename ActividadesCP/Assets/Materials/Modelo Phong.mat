@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material difuso spot
-  m_Shader: {fileID: 4800000, guid: 1bd978b9374e34a48ab5ee00a326cccf, type: 3}
+  m_Name: Modelo Phong
+  m_Shader: {fileID: 4800000, guid: 2f23113a7f5a74f468c59d6efe7d705e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,20 +68,24 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Material_n: 27.6
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Spot_Angle: 44.58
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _AmbientLigth: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirLPosition_w: {r: 0.46, g: -0.68, b: -4.6, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LigthPosition_w: {r: 0, g: 11.32, b: 0, a: 1}
+    - _LigthIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _LigthPosition_w: {r: 3, g: 10.24, b: 3, a: 1}
+    - _MateriaKa: {r: 0.33, g: 0.22, b: 0.03, a: 1}
+    - _MateriaKd: {r: 0.78, g: 0.57, b: 0.11, a: 1}
+    - _MateriaKs: {r: 0.99, g: 0.94, b: 0.81, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

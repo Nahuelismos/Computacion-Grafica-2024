@@ -1,4 +1,4 @@
-Shader "Lighting/Modelo Blinn-Phong"{
+Shader "Lighting/Modelo Blinn - Phong"{
 	Properties{
 		_LigthPosition_w ("Ligth Position (World)", Vector) = (0, 5, 0, 1)
 		_LigthIntensity ("LigthIntensity", Color) = (1, 1, 1, 1)
@@ -57,12 +57,12 @@ Shader "Lighting/Modelo Blinn-Phong"{
 				float3 L = normalize(_LigthPosition_w.xyz - i.position_w.xyz);
 				float3 N = normalize(i.normal_w);
 				float3 V = normalize(_WorldSpaceCameraPos-i.position_w.xyz);
-				float3 H = normalize((_LigthPosition_w.xyz + V)/2);
+				float3 H = normalize((L + V)/2);
 				float3 Iambient = _AmbientLigth * _MateriaKa;
 				float3 Idiffuse = _LigthIntensity.xyz * _MateriaKd.xyz * max(0,dot(L,N));
 				float3 Ispecular = _LigthIntensity.xyz * _MateriaKs.xyz * pow(max(0,dot(H,N)),_Material_n);
 				fragColor.rgb = Iambient + Idiffuse + Ispecular;
-				//fragColor.rgb = Ispecular;
+				//fragColor.rgb = Idiffuse;
 				return fragColor;
 			}
 			ENDCG

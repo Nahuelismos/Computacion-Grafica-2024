@@ -29,7 +29,6 @@ Shader "Custom/ShaderLuzPlaneta"
 
             struct v2f {
                 float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
                 float4 position_w : TEXTCOORD1;  
 				float3 normal_w : TEXTCOORD0;
@@ -38,8 +37,6 @@ Shader "Custom/ShaderLuzPlaneta"
 			float4 _LigthPosition_w;
             sampler2D _TextTierraDia;
             sampler2D _TextTierraNoche;
-            float4 _TextTierraDia_ST;
-            float4 _TextTierraNoche_ST;
 
             v2f vert (appdata v)
             {
@@ -57,10 +54,12 @@ Shader "Custom/ShaderLuzPlaneta"
             {
                 float3 N = normalize(i.normal_w);
                 float3 L = normalize(_LigthPosition_w.xyz - i.position_w.xyz);
+                fixed4 col = 0;
                 // sample the texture
-                
-                fixed4 col = tex2D(_TextTierraDia, i.uv);
-                if(cos(dot(N,L)) < 0) {  
+                if(dot(N,L) > 0.1){
+                    col = tex2D(_TextTierraDia, i.uv);
+                } else
+                if(dot(N,L) < -0.1) {  
                    col = tex2D(_TextTierraNoche, i.uv);
                 }
                 return col;

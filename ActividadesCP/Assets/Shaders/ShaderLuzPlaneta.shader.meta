@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 8644a114f5b9518479d430606b50229b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _TextTierraDia: {fileID: 2800000, guid: e16fcf1f9220e4340b390a8badf9bc88, type: 3}
+  - _TextTierraNoche: {fileID: 2800000, guid: 84964ad99e606b046b682339fc894067, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

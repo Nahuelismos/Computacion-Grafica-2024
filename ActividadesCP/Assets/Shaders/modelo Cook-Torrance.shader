@@ -55,18 +55,20 @@ Shader "Lighting/Modelo Cook - Torrance"{
 				return o;
 			}
 			float FresnelReflectance(float3 V, float3 H){
-				return _FresnelReflectance + (1.0 - _FresnelReflectance)*pot((1.0 - max(0,dot(V,H))),5);
+				return _FresnelReflectance + (1.0 - _FresnelReflectance)*pow((1.0 - max(0,dot(V,H))),5);
 			}
 
-			float normalDistributionFuncioon(float3 H, float3 N){
+			float normalDistributionFuncion(float3 H, float3 N){
+				const float PI = 3.14159265f;
 				float a = pow(_Roughnees,2);
-				return (pow(a,2)/(pi*(pow(max(0,dot(N,H)),2)*((pow(a,2)-1)+1));
+				return pow(a,2)/(PI*(pow(max(0,dot(N,H)),2)*((pow(a,2)-1)+1),2));
 			}
 
 			float geometryTerm(float3 V, float3 L, float3 N){
 				float k = _Roughnees/2;
 				float glL = max(0,dot(N,L))/(max(0,dot(N,L))*(1.0-k)*k);
-				float glV = max(0,dot(N,V))/()
+				float glV = max(0,dot(N,V))/(max(0,dot(N,V))*(1.0-k)*k);
+				return glL*glV;
 			}
 
 			fixed4 frag(v2f i) : SV_Target {	
@@ -77,7 +79,7 @@ Shader "Lighting/Modelo Cook - Torrance"{
 				float3 H = normalize((L + V)/2);
 				float3 Iambient = _AmbientLigth * _MateriaKa;
 				float3 Idiffuse = _LigthIntensity.xyz * _MateriaKd.xyz * max(0,dot(L,N)); //<-- aun no se cambia
-				
+				float3 Ispecular = ( FresnelReflectance(V,H) * normalDistributionFuncion(H,N) * geometryTerm(V,L,N)) / (4 * max(0,dot(N,L)) * max(0,dot(N,V)));
 				//float3 Ispecular = _LigthIntensity.xyz * _MateriaKs.xyz * pow(max(0,dot(H,N)),_Material_n);
 				fragColor.rgb = Iambient + Idiffuse + Ispecular;
 				//fragColor.rgb = Idiffuse;

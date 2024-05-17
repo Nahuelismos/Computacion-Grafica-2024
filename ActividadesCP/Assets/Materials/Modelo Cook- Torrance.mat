@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Modelo Phong
-  m_Shader: {fileID: 4800000, guid: acccdf2f4decee247ab1c6f0491074d9, type: 3}
+  m_Name: Modelo Cook- Torrance
+  m_Shader: {fileID: 4800000, guid: 22703c7b77bd78d4098ceddae876c0a2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -65,27 +65,36 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _FresnelReflectance: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Material_n: 27.6
+    - _Material_n: 0.5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Roughnees: 0
+    - _Rugosidad: 0.109
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientLigth: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Fresnel: {r: 1, g: 1, b: 1, a: 1}
+    - _LightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _LightPosition_W: {r: -5.5, g: 1, b: 1, a: 1}
     - _LigthIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _LigthPosition_w: {r: -11.01, g: 30.98, b: -34.14, a: 0}
-    - _MateriaKa: {r: 0.33, g: 0.22, b: 0.03, a: 1}
-    - _MateriaKd: {r: 0.78, g: 0.57, b: 0.11, a: 1}
-    - _MateriaKs: {r: 0.99, g: 0.94, b: 0.81, a: 1}
+    - _LigthPosition_w: {r: 0, g: 5, b: 0, a: 1}
+    - _MateriaKa: {r: 0, g: 0, b: 0, a: 0}
+    - _MateriaKd: {r: 0, g: 0, b: 0, a: 0}
+    - _MateriaKs: {r: 0, g: 0, b: 0, a: 0}
+    - _MaterialKa: {r: 1, g: 1, b: 1, a: 0}
+    - _MaterialKd: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

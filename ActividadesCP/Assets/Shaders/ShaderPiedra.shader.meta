@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: f381d18b58a79b1478796d557a81feaa
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _TextPiedraBase: {fileID: 2800000, guid: d66c7737419b1f944b5a41054f0f8a93, type: 3}
+  - _TextPiedraSombras: {fileID: 2800000, guid: 334946351b4f02140a15b67eacc110c1, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,10 +1,10 @@
-Shader "Custom/ShaderLuzPlaneta"
+Shader "Custom/ShaderPiedra"
 {
     Properties
     {
         _LigthPosition_w ("Ligth Position (World)", Vector) = (0, 5, 0, 1)
-        _TextTierraDia ("Tierra de Dia", 2D) = "white" {}
-        _TextTierraNoche ("Tierra de Noche", 2D) = "white" {}
+        _TextPiedraBase ("Piedra bases", 2D) = "white" {}
+        _TextPiedraSombras ("Sombras de la piedra", 2D) = "white" {}
     }
     SubShader
     {
@@ -35,8 +35,8 @@ Shader "Custom/ShaderLuzPlaneta"
             };
 
 			float4 _LigthPosition_w;
-            sampler2D _TextTierraDia;
-            sampler2D _TextTierraNoche;
+            sampler2D _TextPiedraBase;
+            sampler2D _TextPiedraSombras;
 
             v2f vert (appdata v)
             {
@@ -50,19 +50,9 @@ Shader "Custom/ShaderLuzPlaneta"
                 return o;
             }
             
-            fixed4 frag (v2f i) : SV_Target
-            {
-                float3 N = normalize(i.normal_w);
-                float3 L = normalize(_LigthPosition_w.xyz - i.position_w.xyz);
+            fixed4 frag (v2f i) : SV_Target {
                 fixed4 col = 0;
-                // sample the texture
-                if(dot(N,L) > 0.1){
-                    col = tex2D(_TextTierraDia, i.uv);
-                } else if(dot(N,L) < 0) {  
-                   col = tex2D(_TextTierraNoche, i.uv);
-                } else {
-                   col = tex2D(_TextTierraDia, i.uv)*dot(N,L)*10 + tex2D(_TextTierraNoche, i.uv)*(1-dot(N,L)*10);
-                }
+                col = tex2D(_TextPiedraBase, i.uv) * tex2D(_TextPiedraSombras, i.uv);
                 return col;
             }
             ENDCG

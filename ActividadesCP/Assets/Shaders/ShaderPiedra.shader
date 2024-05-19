@@ -45,7 +45,7 @@ Shader "Custom/ShaderPiedra"
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.position_w = position_w;
-				o.normal_w = normal_w;
+				o.normal_w = (-1)*normal_w;
                 o.uv = v.uv;
                 return o;
             }

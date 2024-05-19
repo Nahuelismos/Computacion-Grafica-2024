@@ -35,7 +35,7 @@ Shader "TexturaProcedural/OndasVerdes"
 				float F = 1.0 / N;
 				float x = fmod(i.uv.x, F) / F;
 				float y = fmod(i.uv.y, F) / F;
-				float r = smoothstep(0.0, 0.5, x)*smoothstep(0.0, 0.5, y);
+				float r = smoothstep(0.4, 0.6, x);
 				//float r = smoothstep(0.0, 0.2, x) - smoothstep(0.5, 0.7, x);
 
 

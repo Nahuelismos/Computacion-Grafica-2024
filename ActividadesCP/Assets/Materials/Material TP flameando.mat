@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Modelo Phong
-  m_Shader: {fileID: 4800000, guid: acccdf2f4decee247ab1c6f0491074d9, type: 3}
+  m_Name: Material TP flameando
+  m_Shader: {fileID: 4800000, guid: 871f4f7b32c81ec4fa0af2fd05158f60, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -61,6 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Ambient: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -68,7 +69,6 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Material_n: 27.6
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -77,15 +77,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _WaveSpeed: 0.46
+    - _WaveStrength: 0.685
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLigth: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LigthIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _LigthPosition_w: {r: -6.68, g: 2.87, b: 6.52, a: 0}
-    - _MateriaKa: {r: 0.33, g: 0.22, b: 0.03, a: 1}
-    - _MateriaKd: {r: 0.78, g: 0.57, b: 0.11, a: 1}
-    - _MateriaKs: {r: 0.99, g: 0.94, b: 0.81, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
